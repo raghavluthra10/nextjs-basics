@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/Home.module.css";
 
 function Layout({ children }) {
-   return <div className={styles.pageLayout}>{children}</div>;
+  return <div className="px-4 py-4 mt-6">{children}</div>;
 }
 
 export default Layout;
