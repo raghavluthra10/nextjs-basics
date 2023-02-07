@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
+import Page from "@/components/Page";
 import React from "react";
 
 function ssr({ json }) {
   console.log(json);
-  return <Layout>result</Layout>;
+  return <Page>result</Page>;
 }
 
 export default ssr;

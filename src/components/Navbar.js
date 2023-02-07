@@ -5,6 +5,9 @@ function Navbar() {
   return (
     <nav className="flex items-center bg-black text-white p-4 ">
       <div>
+        <Link href="/" className="mr-6">
+          Home
+        </Link>
         <Link className="mr-6" href="/rest">
           Rest Api
         </Link>
