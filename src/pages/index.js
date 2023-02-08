@@ -9,9 +9,7 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    // navbar
     <React.Fragment>
-      {/* <Navbar /> */}
       <Page>
         <h1 className="text-xl font-bold">
           Go to either{" "}
