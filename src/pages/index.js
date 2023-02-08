@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <React.Fragment>
-      <Page>
+      <Page className="mt-6">
         <h1 className="text-xl font-bold">
           Go to either{" "}
           <Link href="/rest" className="underline">

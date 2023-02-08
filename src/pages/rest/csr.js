@@ -1,13 +1,18 @@
 import React from "react";
 import getRestLayout from "@/layouts/RestLayout";
 import Button from "@/components/Button";
+import If from "@/components/If";
+import Page from "@/components/Page";
 
 function Csr() {
+  const [data, setData] = React.useState([]);
+  console.log("data =>", data);
   const getData = async () => {
     try {
       const result = await fetch("/api/rest");
       const json = await result.json();
-      console.log("result =>", json);
+      setData(json.slice(0, 20));
+      return json;
     } catch (error) {
       console.log(error);
     }
@@ -22,7 +27,7 @@ function Csr() {
   };
 
   return (
-    <div className="p-4">
+    <Page>
       <h1 className="mb-2">
         This page shows how data is fetched in next js if we want to do it on
         the client side.
@@ -33,7 +38,13 @@ function Csr() {
         fetching data.
       </h2>
       <Button onClick={handleClick}>Log data</Button>
-    </div>
+
+      <If condition={data.length > 0}>
+        {data.map((d) => (
+          <div key={d.id}>{d.title}</div>
+        ))}
+      </If>
+    </Page>
   );
 }
 
