@@ -2,7 +2,9 @@ import Button from "@/components/Button";
 import If from "@/components/If";
 import Navbar from "@/components/Navbar";
 import Page from "@/components/Page";
+import TabLayout from "@/components/TabLayout";
 import Link from "next/link";
+import getRestLayout from "@/layouts/RestLayout";
 import React from "react";
 
 const tabOptions = {
@@ -19,12 +21,4 @@ function Index() {
 
 export default Index;
 
-Index.getLayout = function (page) {
-  return (
-    <React.Fragment>
-      <Navbar />
-      <div>This will be the tab navigation section</div>
-      {page}
-    </React.Fragment>
-  );
-};
+Index.getLayout = getRestLayout;

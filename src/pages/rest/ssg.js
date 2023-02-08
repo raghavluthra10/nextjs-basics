@@ -1,14 +1,13 @@
 import React from "react";
 import getRestLayout from "@/layouts/RestLayout";
 
-function Ssr() {
+function Ssg() {
   return (
     <div>
-      <h1>SSR</h1>
+      <h1>SSG</h1>
     </div>
   );
 }
 
-export default Ssr;
-
-Ssr.getLayout = getRestLayout;
+export default Ssg;
+Ssg.getLayout = getRestLayout;

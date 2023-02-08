@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import React from "react";
 
 export default function App({ Component, pageProps }) {
-  console.log("getLayout =>", Component.getLayout);
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps} />);
   } else {
