@@ -3,7 +3,7 @@ import getRestLayout from "@/layouts/RestLayout";
 import Button from "@/components/Button";
 
 function Csr() {
-  const handleClick = async () => {
+  const getData = async () => {
     try {
       const result = await fetch("/api/rest");
       const json = await result.json();
@@ -11,6 +11,14 @@ function Csr() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  React.useEffect(() => {
+    getData();
+  }, []);
+
+  const handleClick = async () => {
+    getData();
   };
 
   return (
