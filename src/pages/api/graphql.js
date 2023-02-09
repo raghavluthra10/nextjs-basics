@@ -7,6 +7,16 @@ const typeDefs = /* GraphQL */ `
     hello: String
     user(id: Int!): User
   }
+
+  type Mutation {
+    addUser(input: AddUserInput): User
+  }
+
+  input AddUserInput {
+    title: String
+    completed: Boolean
+  }
+
   type User {
     userId: Int
     id: ID
@@ -26,6 +36,21 @@ const resolvers = {
     user(parent, args) {
       const { id } = args;
       return data.find((user) => (user.id = id));
+    },
+  },
+  Mutation: {
+    addUser(parent, args) {
+      const { input } = args;
+      const id = new Date().getTime();
+      const userToBeAdded = new Object();
+
+      userToBeAdded.id = new Date().getUTCMilliseconds();
+      userToBeAdded.title = input.title;
+      userToBeAdded.completed = input.completed;
+      userToBeAdded.userId = new Date().getUTCMilliseconds() + 1;
+
+      data.push(userToBeAdded);
+      return userToBeAdded;
     },
   },
 };
