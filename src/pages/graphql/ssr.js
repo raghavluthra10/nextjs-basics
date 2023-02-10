@@ -1,5 +1,5 @@
 import React from "react";
-import getRestLayout from "@/layouts/RestLayout";
+import getGraphqlLayout from "@/layouts/GraphqlLayout";
 import Button from "@/components/Button";
 import Page from "@/components/Page";
 
@@ -27,7 +27,7 @@ function Ssr({ data }) {
 
 export default Ssr;
 
-Ssr.getLayout = getRestLayout;
+Ssr.getLayout = getGraphqlLayout;
 
 export async function getServerSideProps() {
   const result = await fetch("http://localhost:3000/api/rest");
