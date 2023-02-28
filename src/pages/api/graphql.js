@@ -33,7 +33,8 @@ const resolvers = {
     users() {
       return data;
     },
-    user(parent, args) {
+    user(parent, args, context) {
+      console.log("context =>", context);
       const { id } = args;
       return data.find((user) => (user.id = id));
     },

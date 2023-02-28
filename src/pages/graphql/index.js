@@ -1,3 +1,4 @@
+import getGraphqlLayout from "@/layouts/GraphqlLayout";
 import React from "react";
 
 function Index() {
@@ -9,3 +10,5 @@ function Index() {
 }
 
 export default Index;
+
+Index.getLayout = getGraphqlLayout;

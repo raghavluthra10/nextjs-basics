@@ -15,6 +15,7 @@ function Csr() {
         query: gql`
           query GetUsers {
             users {
+              id
               title
             }
           }
@@ -30,10 +31,6 @@ function Csr() {
     getData();
   }, []);
 
-  const handleClick = async () => {
-    console.log("handle click");
-  };
-
   return (
     <Page>
       <h1 className="mb-2">
@@ -45,7 +42,8 @@ function Csr() {
         If you are coming from React.js, you would be familiar with this way of
         fetching data.
       </h2>
-      <Button onClick={handleClick}>Log data</Button>
+
+      <h1 className="underline text-2xl mb-2">Data:</h1>
 
       <If condition={data.length > 0}>
         {data.map((d) => (

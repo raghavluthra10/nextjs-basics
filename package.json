@@ -17,6 +17,7 @@
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "graphql": "^16.6.0",
+    "graphql-middleware": "^6.1.33",
     "graphql-yoga": "^3.5.1",
     "next": "13.1.6",
     "postcss": "^8.4.21",
